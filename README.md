@@ -15,6 +15,7 @@ To reduce the burden on the Artifact Evaluation (AE) committee, we provide a pre
    ./run-cxlssh.sh
    ```   
 3. Pin CPUs (run in a separate terminal):
+   * Make sure the CPU IDs in `pin.sh` are on the same NUMA node as the reserved memory.
    ```sh
    cd Cylon/build-femu
    ./pin.sh
@@ -22,9 +23,10 @@ To reduce the burden on the Artifact Evaluation (AE) committee, we provide a pre
 
 4. Initializing CXL-SSD Inside the VM
 * Once the VM is running, initialize the CXL-SSD device inside the guest VM:
+   * Copy tools/* into the guest
    ```sh
    bash ~/login.sh #ssh into the VM
-   ./setup_dev.sh
+   ./setup_dev.sh [system_ram|devdax]
    ```
 * After initialization, the CXL-SSD appears as a CPU-less NUMA node:
    ```sh
