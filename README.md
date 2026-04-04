@@ -5,7 +5,18 @@
     * [Cylon-scripts](Cylon-scripts/): Benchmark and plot scripts
 
 ## How to Use Cylon CXL-SSD and Reproduce Experiments
-To reduce the burden on the Artifact Evaluation (AE) committee, we provide a pre-configured Cylon environment hosted on CloudLab. The environment includes a virtual machine that emulates CXL-SSD functionality and is ready for experimentation.
+<!-- To reduce the burden on the Artifact Evaluation (AE) committee, we provide a pre-configured Cylon environment hosted on CloudLab. The environment includes a virtual machine that emulates CXL-SSD functionality and is ready for experimentation. -->
+### Setting up the guest image
+
+The guest VM image must have a CXL-enabled kernel and required tools installed before use. See [docs/guest-image-setup.md](docs/guest-image-setup.md) for the full setup guide, which covers:
+* Ubuntu 22.04 base image preparation and disk resize
+* Serial console GRUB configuration
+* Building and installing a CXL-enabled Linux 6.4.6 kernel
+* Installing `ndctl`
+
+### Setting up the backend memory
+
+See [docs/backend-memory-setup.md](docs/backend-memory-setup.md) for instructions on reserving a contiguous physical memory region on the host using the `memmap` GRUB parameter.
 
 ### Launching the Cylon VM
 1. SSH into the CloudLab host machine.
