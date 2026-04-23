@@ -111,4 +111,4 @@ Cylon can be exposed to the guest OS in **two mutually exclusive modes**:
 > Rule of thumb: if the benchmark/application is unmodified and uses `malloc()` + `numactl`, you want **system-ram**. Use **devdax** only for benchmarks that explicitly open/mmap `/dev/dax*`.
 
 ## Support
-If you encounter issues not covered in this document, please contact **Dongha Yoon** (`dongha@vt.edu`).
+If you encounter issues not covered in this document, please use `GitHub Issues`.
